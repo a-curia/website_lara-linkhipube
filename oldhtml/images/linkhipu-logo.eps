@@ -1,0 +1,39 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 370 58
+%%Title: LINKHIPU Logo
+%%Creator: LINKHIPU S.R.L.
+%%EndComments
+% Blue = #003399 = 0 0.2 0.6
+% Red  = #e03030 = 0.878 0.188 0.188
+/blue { 0 0.2 0.6 setrgbcolor } def
+/red  { 0.878 0.188 0.188 setrgbcolor } def
+/white { 1 1 1 setrgbcolor } def
+% Helper: filled circle
+/fc { 3 -1 roll 3 -1 roll moveto 0 360 arc fill } def
+% Helper: ring circle
+/rc { gsave 3 -1 roll 3 -1 roll moveto 0 360 arc
+      4 setlinewidth stroke grestore } def
+blue
+% Symbol lines (SVG y flipped: y_eps = 58 - y_svg)
+% Line 1: y=20 → eps y=38
+2.2 setlinewidth 1 setlinecap
+4 38 moveto 46 38 lineto stroke
+% Line 2: y=31 → eps y=27
+4 27 moveto 46 27 lineto stroke
+% Line 3: y=42 → eps y=16
+4 16 moveto 46 16 lineto stroke
+% Symbol circles (y flipped)
+white 12 38 4 fc  blue 12 38 4 rc
+white 30 38 4 fc  blue 30 38 4 rc
+white 39 38 4 fc  blue 39 38 4 rc
+white 21 27 4 fc  blue 21 27 4 rc
+white 12 16 4 fc  blue 12 16 4 rc
+white 30 16 4 fc  blue 30 16 4 rc
+white 39 16 4 fc  blue 39 16 4 rc
+% Red bar (y=11..51 → eps y=7..47, h=40)
+red 52 7 3 40 rectfill
+% Wordmark (simplified — embed as note; full rendering requires font embedding)
+blue
+/Helvetica-Bold findfont 35 scalefont setfont
+59 12 moveto (LINKHIPU) show
+%%EOF

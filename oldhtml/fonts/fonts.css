@@ -1,0 +1,82 @@
+/* ================================================================
+   NOTE FOR LOCAL VIEWING (file:// protocol):
+   Browsers restrict font loading from local file:// URLs for security.
+   The site will use system fonts locally, which look slightly different
+   from the hosted version. This is normal and expected.
+   
+   To see the exact hosted appearance locally, use:
+     - VS Code + Live Server extension  (right-click index.html → Open with Live Server)
+     - Python:  python -m http.server 8080  then visit http://localhost:8080
+     - Node:    npx serve .  then visit http://localhost:3000
+   ================================================================ */
+/* ================================================================
+   LINKHIPU — Self-hosted fonts (GDPR compliant, no CDN)
+   
+   HOW TO ACTIVATE:
+   1. Go to https://fonts.bunny.net
+   2. Search "Manrope" → select weights 300,400,500,600,700,800 → Download
+   3. Search "Inter"   → select weights 300,400,500,600       → Download
+   4. Unzip and place the .woff2 files in this /fonts/ folder
+   5. Rename files to match exactly what's listed in src: below
+   6. That's it — no other changes needed anywhere
+   ================================================================ */
+
+/* Manrope */
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-Light.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-SemiBold.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('Manrope-ExtraBold.woff2') format('woff2');
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Light.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+
+/* Fallback until woff2 files are placed here */
+:root {
+  --f-head: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-body: 'Inter',   system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
