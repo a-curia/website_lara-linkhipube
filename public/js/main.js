@@ -193,9 +193,9 @@ const SmoothScroll = (() => {
 const ContactForm = (() => {
   // Field validation rules
   const rules = {
-    fname:   { label: 'First Name',   test: v => v.length >= 2 },
-    lname:   { label: 'Last Name',    test: v => v.length >= 2 },
-    email:   { label: 'Email',        test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    // fname:   { label: 'First Name',   test: v => v.length >= 2 },
+    // lname:   { label: 'Last Name',    test: v => v.length >= 2 },
+    // email:   { label: 'Email',        test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
     message: { label: 'Message',      test: v => v.length >= 10 },
   };
 
@@ -235,8 +235,15 @@ const ContactForm = (() => {
    *   if (!res.ok) throw new Error('Server responded with ' + res.status);
    */
   async function send(payload) {
-    await new Promise(r => setTimeout(r, 1200)); // ← replace with real fetch()
-    console.log('[LINKHIPU] Form payload:', payload);
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body.error || 'Server error ' + res.status);
+    }
   }
 
   function init() {

@@ -851,7 +851,7 @@ section { padding: clamp(72px, 10vw, 120px) var(--pad-h); }
 .cookie-btn:active { transform: scale(.97); }
 .cookie-btn-primary {
   background: var(--c-blue);
-  color: #003399;
+  color: #fff;
   border: 2px solid var(--c-yellow);
 }
 .cookie-btn-primary:hover { background: var(--c-yellow-mid); border-color: var(--c-blue-mid); }
